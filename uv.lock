@@ -1,0 +1,32 @@
+version = 1
+revision = 3
+requires-python = ">=3.13"
+
+[[package]]
+name = "funlib"
+version = "0.1.1"
+source = { git = "https://github.com/systematicguy/uv-sample-editable-lib.git?subdirectory=packages%2Ffunlib&tag=0.1.1#8f8f5ff742d8a716855739bef4c9846e6761b024" }
+
+[[package]]
+name = "funlib-devclone"
+version = "0.0.0"
+source = { editable = "../uv-sample-editable-lib/packages/funlib-devclone" }
+
+[[package]]
+name = "uv-sample-editable-app1"
+version = "0.1.0"
+source = { editable = "." }
+
+[package.dev-dependencies]
+devclone = [
+    { name = "funlib-devclone" },
+]
+exact = [
+    { name = "funlib" },
+]
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+devclone = [{ name = "funlib-devclone", editable = "../uv-sample-editable-lib/packages/funlib-devclone" }]
+exact = [{ name = "funlib", git = "https://github.com/systematicguy/uv-sample-editable-lib.git?subdirectory=packages%2Ffunlib&tag=0.1.1" }]

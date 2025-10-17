@@ -1,0 +1,17 @@
+[project]
+name = "uv-sample-editable-app1"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "David Horvath", email = "david.h@systematicguy.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+uv-sample-editable-app1 = "uv_sample_editable_app1:main"
+
+[build-system]
+requires = ["uv_build>=0.8.13,<0.9.0"]
+build-backend = "uv_build"

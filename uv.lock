@@ -1,6 +1,10 @@
 version = 1
 revision = 3
 requires-python = ">=3.13"
+conflicts = [[
+    { package = "uv-sample-editable-app1", group = "devclone" },
+    { package = "uv-sample-editable-app1", group = "exact" },
+]]
 
 [[package]]
 name = "funlib"

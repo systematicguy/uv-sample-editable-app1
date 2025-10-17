@@ -27,3 +27,14 @@ exact = [
 [tool.uv.sources]
 funlib = { git = "https://github.com/systematicguy/uv-sample-editable-lib.git", subdirectory = "packages/funlib", tag = "0.1.1" }
 funlib-devclone = { path = "../uv-sample-editable-lib/packages/funlib-devclone", editable = true }
+
+[tool.uv]
+default-groups = ["devclone"]
+
+# exact and devclone groups are marked as conflicting to prevent installing both at the same time
+conflicts = [
+    [
+      { group = "exact" },
+      { group = "devclone" },
+    ],
+]
